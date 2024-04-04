@@ -3,11 +3,11 @@
   <title>Hexo-Blog</title>
   
   
-  <link href="https://tawezy7.github.io/project/atom.xml" rel="self"/>
+  <link href="https://tawezy7.github.io/atom.xml" rel="self"/>
   
-  <link href="https://tawezy7.github.io/project/"/>
+  <link href="https://tawezy7.github.io/"/>
   <updated>2024-04-03T14:38:19.612Z</updated>
-  <id>https://tawezy7.github.io/project/</id>
+  <id>https://tawezy7.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://tawezy7.github.io/project/2024/04/03/hello-world/"/>
-    <id>https://tawezy7.github.io/project/2024/04/03/hello-world/</id>
+    <link href="https://tawezy7.github.io/2024/04/03/hello-world/"/>
+    <id>https://tawezy7.github.io/2024/04/03/hello-world/</id>
     <published>2024-04-03T14:38:19.612Z</published>
     <updated>2024-04-03T14:38:19.612Z</updated>
     
