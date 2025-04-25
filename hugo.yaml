@@ -1,0 +1,48 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Tawezy7's Hugo Blog
+theme: ["PaperMod"]
+
+enableEmoji: true
+
+params:
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  homeInfoParams:
+    Title: Hi there 👋!
+    Content: Welcome to my blog! I'm Tawezy7.
+     I love sharing my knowledge and experiences with the world.
+     Here, you'll find articles on programming, technology, and personal development.
+     Feel free to explore and connect with me!
+
+  socialIcons: # optional
+    - name: "Github"
+      url: "https://github.com/Tawezy7"
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: Wiki
+          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
