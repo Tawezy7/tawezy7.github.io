@@ -9,11 +9,8 @@ params:
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   homeInfoParams:
-    Title: Hi there 👋!
-    Content: Welcome to my blog! I'm Tawezy7.
-     I love sharing my knowledge and experiences with the world.
-     Here, you'll find articles on programming, technology, and personal development.
-     Feel free to explore and connect with me!
+    Title: TechLog
+    Content: 悟已往之不谏，知来者之可追。
 
   socialIcons: # optional
     - name: "Github"
