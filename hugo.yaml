@@ -1,6 +1,6 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: Tawezy7's Hugo Blog
+title: Tawezy7's Blog
 theme: ["PaperMod"]
 
 enableEmoji: true
