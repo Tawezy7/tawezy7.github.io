@@ -1,12 +1,8 @@
 +++
 date = '2025-04-23T19:32:29+08:00'
-draft = true
-title = 'linux压缩解压'
+draft = false
+title = 'linux下压缩解压命令'
 +++
-
-```go
-fmt.Println("Hello, world!")
-```
 
 ```
 1、tar
