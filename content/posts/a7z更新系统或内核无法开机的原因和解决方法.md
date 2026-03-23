@@ -172,46 +172,12 @@ boot
 
 ---
 
-### ✅ 方案二：手动加载（绕过 extlinux）
-
-```bash
-setenv kernel_addr_r  0x42000000
-setenv ramdisk_addr_r 0x4A000000
-setenv fdt_addr_r     0x43000000
-
-load mmc 0:1 ${kernel_addr_r} /boot/vmlinuz
-load mmc 0:1 ${ramdisk_addr_r} /boot/initrd.img
-load mmc 0:1 ${fdt_addr_r} /boot/devicetree.dtb
-
-booti ${kernel_addr_r} ${ramdisk_addr_r} ${fdt_addr_r}
-```
-
----
-
-### ⚠️ 方案三：修改 DTB（不推荐优先）
-
-* 修改 `reserved-memory`
-* 或删除相关节点
-
-👉 风险：
-
-* 可能影响 secure firmware / 外设
-
----
-
-### ⚠️ 方案四：修改 U-Boot 源码（进阶）
+### ⚠️ 方案二：修改 U-Boot 源码（进阶）
 
 可修改：
 
 ```c
-CONFIG_SYS_BOOTMAPSZ
-bootm_size 默认值
-```
-
-或禁用：
-
-```c
-CONFIG_SYS_BOOT_RAMDISK_HIGH
+BOOTM_SIZE
 ```
 
 ---
