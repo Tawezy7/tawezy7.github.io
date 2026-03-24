@@ -239,4 +239,43 @@ setenv bootm_size 0x20000000
 
 ---
 
-如果后续需要做“永久生效”（编译进 U-Boot），可以在此基础上继续优化。
+## 编译U-Boot 以支持更大的 `bootm_size`：
+
+1. 获取 U-Boot 源码：
+
+```bash
+git clone --recurse-submodules https://github.com/radxa-pkg/u-boot-aw2501.git
+cd u-boot-aw2501
+```
+2. 修改配置并编译：
+
+```bash
+# 修改 u-boot-aw2501/src/include/configs/sunxi-common.h 
+```
+
+```c
+...
+#if defined CONFIG_ARM || defined CONFIG_RISCV
+/*
+ * Boards seem to come with at least 512MB of DRAM.
+ * The kernel should go at 512K, which is the default text offset (that will
+ * be adjusted at runtime if needed).
+ * There is no compression for arm64 kernels (yet), so leave some space
+ * for really big kernels, say 256MB for now.
+ * Scripts, PXE and DTBs should go afterwards, leaving the rest for the initrd.
+ */
+#define BOOTM_SIZE        __stringify(0x20000000) /* 512MB */
+...
+```
+
+```bash
+# 编译 U-Boot
+make deb
+```
+3. 将编译好的 U-Boot 刷入设备：
+- 在u-boot-aw2501上一层目录下找到编译好的 `u-boot-aw2501_2018.07-13_all.deb` 文件并上传至设备
+- 使用 `dpkg -i u-boot-aw2501_2018.07-13_all.deb` 命令安装uboot
+- 使用 `lsblk` 查看需要安装u-boot的分区（通常SD是 `/dev/mmcblk0`,UFS是 `/dev/sda`）
+- cd 到 `/usr/lib/u-boot/radxa-cubie-a7z` 目录
+- 使用 `sudo ./setup.sh update_bootloader /dev/sda` 将 U-Boot 刷入SD/UFS（注意替换自己的设备路径）
+- 重启设备，验证问题是否解决
