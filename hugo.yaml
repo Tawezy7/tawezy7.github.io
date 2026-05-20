@@ -47,3 +47,8 @@ outputs:
 caches:
   images:
     dir: :cacheDir/images
+
+sitemap:
+  changeFreq: ""
+  filename: sitemap.xml
+  priority: -1
